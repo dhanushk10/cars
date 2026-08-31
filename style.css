@@ -1,0 +1,631 @@
+/* Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f7f9;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+.navbar {
+  background-color: #4a154b;
+  color: #ffffff;
+  padding: 10px 40px;
+}
+
+.nav-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-location {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 800;
+  color: #ff3366;
+}
+
+.location-dropdown {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #330b35;
+  padding: 8px 15px;
+  border-radius: 20px;
+  width: 250px;
+}
+
+.search-bar i {
+  color: #aaa;
+  margin-right: 8px;
+}
+
+.search-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  width: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 13px;
+}
+
+.nav-icon {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-info {
+  text-align: right;
+  line-height: 1.1;
+}
+
+.contact-info small {
+  display: block;
+  font-size: 10px;
+  color: #ccc;
+}
+
+.nav-bottom {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #ddd;
+}
+
+.explore-lbl {
+  color: #aaa;
+  font-size: 12px;
+}
+
+
+
+.hero-banner {
+  position: relative;
+  height: 400px;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('https://via.placeholder.com/1200x400?text=Hero+Banner+Car+Image')
+    center/cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  color: #fff;
+}
+
+.hero-content h1 {
+  background-image: url(https://media.istockphoto.com/id/528474010/photo/making-memories.jpg?s=612x612&w=0&k=20&c=5aqG6Qk4kmwZykSufGKX5ffnnV1Op8JOSb_yrzuGDLU=);
+  background-position: cover;
+  
+  font-size: 48px;
+  font-weight: 11000;
+  line-height: 1.1;
+  text-transform: lowercase;
+}
+
+.hero-content p {
+  font-size: 20px;
+  margin: 15px 0;
+  font-weight: 500;
+}
+
+.cta-btn {
+  background-color: #ff3366;
+  color: #fff;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 35px;
+  height: 35px;
+
+  border-radius: 50%;
+  border: none;
+
+  background-color: #fff;
+  color: #333;
+
+  cursor: pointer;
+
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn.prev {
+  left: 20px;
+}
+
+.carousel-btn.next {
+  right: 20px;
+}
+
+
+
+.section-title {
+  text-align: center;
+  margin: 40px 0 20px;
+  position: relative;
+
+  font-size: 22px;
+  color: #2c0e37;
+}
+
+.section-title span {
+  background-color: #f7f7f9;
+  padding: 0 15px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.section-title::before {
+  content: "";
+
+  position: absolute;
+  top: 50%;
+  left: 10%;
+
+  width: 80%;
+  height: 1px;
+
+  background-color: #e0e0e0;
+
+  z-index: 0;
+}
+
+
+/* ================================
+   3. FEATURED CARS SECTION
+================================ */
+
+.featured-cars {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  padding: 10px 25px;
+
+  border: none;
+
+  background-color: #eee0f5;
+  color: #4a154b;
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.tab-btn:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.tab-btn:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.tab-btn.active {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+.cars-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 20px;
+}
+
+.car-card {
+  background-color: #fff;
+
+  border-radius: 12px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.card-img {
+  position: relative;
+
+  background-color: #f0f0f0;
+
+  text-align: center;
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+.favorite-icon {
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  font-size: 18px;
+
+  color: #333;
+
+  cursor: pointer;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.car-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+}
+
+.car-header h3 {
+  font-size: 16px;
+  color: #2c0e37;
+}
+
+.car-header .price {
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.car-sub {
+  display: flex;
+
+  justify-content: space-between;
+
+  font-size: 12px;
+
+  color: #666;
+
+  margin-top: 4px;
+}
+
+.car-tags {
+  display: flex;
+
+  gap: 6px;
+
+  margin: 15px 0;
+}
+
+.car-tags span {
+  background-color: #f2f2f2;
+
+  padding: 4px 8px;
+
+  border-radius: 12px;
+
+  font-size: 11px;
+
+  color: #555;
+}
+
+.location-tag {
+  font-size: 11px;
+
+  color: #777;
+
+  margin-bottom: 12px;
+}
+
+.card-footer {
+  border-top: 1px solid #eee;
+
+  padding-top: 10px;
+
+  font-size: 11px;
+
+  color: #2e7d32;
+
+  font-weight: 500;
+}
+
+
+
+.popular-brands {
+  max-width: 1200px;
+
+  margin: 0 auto;
+
+  padding: 0 20px 40px;
+}
+
+
+/* BRAND GRID */
+
+.brands-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 15px;
+
+  margin-top: 20px;
+}
+
+
+/* BRAND CARD */
+
+.brand-card {
+  background-color: #fff;
+
+  border-radius: 10px;
+
+  padding: 15px;
+
+  min-height: 75px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  text-align: left;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04);
+
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.brand-card:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* BRAND LOGO */
+
+.brand-logo {
+  width: 45px;
+
+  height: 45px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  display: block;
+
+  margin: 0;
+}
+
+
+/* BRAND INFORMATION */
+
+.brand-info {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  min-width: 0;
+}
+
+.brand-card h4 {
+  font-size: 14px;
+
+  color: #666;
+
+  font-weight: 600;
+
+  margin: 0;
+
+  white-space: nowrap;
+}
+
+.brand-card p {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #2c0e37;
+
+  margin-top: 4px;
+}
+
+
+/* SPINNY MAX CARD */
+
+.max-card {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-align: center;
+}
+
+.max-card h4 {
+  font-size: 16px;
+
+  color: #ff3366;
+
+  font-weight: 800;
+}
+
+.max-card span {
+  color: #4a154b;
+}
+
+
+/* ================================
+   VIEW ALL BUTTON
+================================ */
+
+.view-all-container {
+  text-align: center;
+
+  margin-top: 25px;
+}
+
+.outline-btn {
+  background: transparent;
+
+  border: 1px solid #6a1b9a;
+
+  color: #6a1b9a;
+
+  padding: 10px 30px;
+
+  border-radius: 8px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.outline-btn:hover {
+  background-color: #6a1b9a;
+
+  color: #fff;
+}
+
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 992px) {
+
+  .brands-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+  .hero-banner {
+    padding: 0 40px;
+  }
+
+  .nav-top {
+    gap: 15px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .brands-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .brand-card {
+    padding: 12px 10px;
+
+    gap: 8px;
+  }
+
+  .brand-logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .brand-card h4 {
+    font-size: 12px;
+  }
+
+  .brand-card p {
+    font-size: 11px;
+  }
+
+  .nav-bottom {
+    display: none;
+  }
+
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .search-bar {
+    width: 180px;
+  }
+
+  .hero-banner {
+    height: 300px;
+    padding: 0 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+}
